@@ -10,16 +10,17 @@ const home = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-  let {data} = request
+  
+  try{
+    let {data} = await request
     .get("api/users", {
       params: { id: req.query.id },
     })
-    .then(function (user) {
-      res.render("update", { user: data });
-    })
-    .catch((err) => {
-      res.send(err);
-    });
+    res.render("update", { user: data });
+  }catch(err){
+    res.send(err) 
+  }
+
 };
 
 const addUser = (req, res) => {
