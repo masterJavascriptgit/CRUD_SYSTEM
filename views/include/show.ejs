@@ -1,0 +1,17 @@
+<% for(let i =0;i < data.length; i++){ %>
+<tr>
+  <td><%= i + 1 %></td>
+  <td><%= data[i].name %></td>
+  <td><%= data[i].email %></td>
+  <td><%= data[i].gender %></td>
+  <td><%= data[i].status %></td>
+  <td>
+    <a href="/update?id=<%= data[i]._id%>" class="btn border-shadow update">
+      <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+    </a>
+    <a class="btn border-shadow delete" data-id="<%= data[i]._id%>">
+      <span class="text-gradient"><i class="fas fa-times"></i></span>
+    </a>
+  </td>
+</tr>
+<% } %>
