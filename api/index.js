@@ -10,12 +10,12 @@ const home = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-  axios
-    .get(`${process.env.DEVELOPMENT}/api/users`, {
+  let {data} = request
+    .get("api/users", {
       params: { id: req.query.id },
     })
     .then(function (user) {
-      res.render("update", { user: user.data });
+      res.render("update", { user: data });
     })
     .catch((err) => {
       res.send(err);
