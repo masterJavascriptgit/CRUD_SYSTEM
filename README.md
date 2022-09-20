@@ -5,3 +5,8 @@
 // or
 
 `yarn install` 
+
+
+# Run application
+
+`npm start`
